@@ -1,0 +1,90 @@
+body{
+	background-image: url(https://cdn.pixabay.com/photo/2016/03/15/02/42/floor-1256804_960_720.jpg);
+	background-repeat:no-repeat;
+	background-size: cover;
+	color: white;
+}
+
+.swatch {
+	margin: 2ch;
+	width: 4ch;
+	height: 4ch;
+	border: 1px solid #eee;
+}
+
+#header {
+	text-align: center;
+}
+
+#header p {
+	font-size: 50px;
+	font-family: Georgia;
+}
+
+#button_Div{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#button_Space{
+	border-radius: 30px;
+	align-self: flex-start;
+	width: 500px;
+	height: 200px;
+	background-color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#text_Div{
+	text-align: center;
+	margin-top: 20px;
+}
+
+#WH{
+	display: flex;
+	text-align: center;
+	justify-content: center;
+}
+
+#border_Div{
+	text-align: center;
+}
+
+#shadow_Div{
+	text-align: center;
+}
+
+#color_Div{
+	display: flex;
+	text-align: center;
+	justify-content: center;
+}
+
+.color_Shell{
+	margin: 10px;
+	
+}
+
+#cursor_Div{
+	text-align: center;
+}
+
+
+
+#element {
+	background-color: red;
+	border: 10px 10px 5px 0px;
+}
+
+input[type="text"]{
+	margin: 10px;
+	width: 100px;
+	height: 20px;
+	font-size: 20px;
+	color: #63717f;
+	padding-left: 10px;
+	border-radius: 5px;
+}

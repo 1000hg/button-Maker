@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	
+	<link rel="stylesheet" type="text/css" href="colorpicker.css" />
+	<link rel="stylesheet" href="a.css">
+</head>
+<body>
+	<div id="header">
+		<p>Button Maker</p>
+	</div>
+	<div id="button_Div">
+		<div id="button_Space">
+			<button id="button">Sample</button>
+		</div>
+	</div>
+	
+	<div id="text_Div">
+		<div id="inputText">
+			<div>텍스트 입력</div>
+			<input type="text" id="text" oninput="inputName()" placeholder="Sample">
+		</div>
+
+		<div>
+			<div>폰트 크기</div>
+			<input type="text" id="font_Size" oninput="setButtonCSS(9)">
+		</div>
+	</div>
+	
+	<div id="WH">
+		<div id="widthDiv">
+			<div>가로</div>
+			<input type="text" id="width" oninput="setButtonCSS(1)">
+		</div>
+		<div id="heightDiv">
+			<div>세로</div>
+			<input type="text" id="height" oninput="setButtonCSS(2)">
+		</div>
+	</div>
+	
+	<div id="border_Div">
+		<div>가장자리 각도</div>
+		<input type="text" id="border-text" width="50px" height="50px" oninput="setButtonCSS(3)">
+  		<input type="range" min="1" max="100" value="0" id="border-slider" id="myRange" oninput="setButtonCSS(4)">
+  		<span id="val"></span>
+	</div>
+	
+	<div id="shadow_Div">
+		<span>그림자 주기</span>
+		<input type="checkbox" id="give_Shadow" onclick='give_Shadow();'>
+		
+		<div>
+			<div>가로 이동</div>
+			<input type="text" id="horizontal_Shadow" width="50px" height="50px" oninput="setButtonCSS(5)">
+			<input type="range" min="-200" max="200" value="0" id="horizontal_Shadow_Slider" oninput="setButtonCSS(6)">
+  		</div>
+  		
+  		<div>
+			<div>세로 이동</div>
+			<input type="text" id="vertical_Shadow" width="50px" height="50px" oninput="setButtonCSS(7)">
+			<input type="range" min="-200" max="200" value="0" id="vertical_Shadow_Slider" oninput="setButtonCSS(8)">
+		</div>
+		
+	</div>
+	
+	
+	<div id="color_Div">
+		<div class="color_Shell">
+			<div>백그라운드</div>
+			<div class="swatch" style="background: #000" onclick="changeSwatch(this, 1)"></div>
+		</div>
+		
+		<div class="color_Shell">
+			<div>보더 컬러</div>
+			<div class="swatch" style="background: #000" onclick="changeSwatch(this, 2)"></div>
+		</div>
+		
+		<div class="color_Shell">
+			<div>폰트 컬러</div>
+			<div class="swatch" style="background: #000" onclick="changeSwatch(this, 3)"></div>
+		</div>
+		
+		<div class="color_Shell">
+			<div>그림자 컬러</div>
+			<div class="swatch" style="background: #000" onclick="changeSwatch(this, 4)"></div>
+		</div>
+	</div>
+	
+	<div id="cursor_Div">
+		<span>커서 포인터</span>
+		<input type="checkbox" id="give_Pointer" onclick="give_Pointer();">
+	</div>
+	
+	
+	<!--
+	<div>
+	
+		<input type="text" id="size" oninput="SetSize()">
+	</div>
+	
+	
+	<div>
+	
+		<input type="text" id="width" oninput="SetWidth()">
+		<input type="text" id="height" oninput="SetHeight()">
+	</div>
+	
+	
+	<div>
+		<input type="text" id="padding" oninput="SetPadding()">
+		<input type="text" id="margin" oninput="SetMargin()">
+	</div>
+	
+	
+	<div class="swatch" style="background: #000" onclick="changeSwatch2(this)"></div>
+	
+	
+	
+	<div>
+		<input type="text" id="demo" width="50px" height="50px">
+  		<input type="range" min="1" max="100" value="0" class="slider" id="myRange" onchange="a()">
+	</div>
+	
+   
+   
+    <script src="cp_min.js"></script>
+	<div class="swatch" style="background: #000" onclick="changeSwatch(this)"></div>
+    
+
+    <script>
+      async function changeSwatch(swatch) {
+        const picker = new ColorPicker.Picker(swatch);
+        const c = getComputedStyle(swatch).getPropertyValue('background-color');
+        const color = await picker.pick(ColorPicker.toNumber(c));
+        if (color != null) {
+          swatch.style.backgroundColor = ColorPicker.toString(color);
+		  SetBackgroundColor(ColorPicker.toString(color).substring(4).slice(0,-1).split(",", 3));
+        }
+      }
+		
+	
+	async function changeSwatch2(swatch) {
+        const picker = new ColorPicker.Picker(swatch);
+        const c = getComputedStyle(swatch).getPropertyValue('background-color');
+        const color = await picker.pick(ColorPicker.toNumber(c));
+        if (color != null) {
+          swatch.style.backgroundColor = ColorPicker.toString(color);
+		  SetBorderColor(ColorPicker.toString(color).substring(4).slice(0,-1).split(",", 3));
+        }
+      }
+		
+	
+	async function changeSwatch3(swatch) {
+        const picker = new ColorPicker.Picker(swatch);
+        const c = getComputedStyle(swatch).getPropertyValue('background-color');
+        const color = await picker.pick(ColorPicker.toNumber(c));
+        if (color != null) {
+          swatch.style.backgroundColor = ColorPicker.toString(color);
+		  SetFontColor(ColorPicker.toString(color).substring(4).slice(0,-1).split(",", 3));
+        }
+      }
+    </script>
+
+	-->
+	
+	
+	
+	<div id="outputCss">
+	
+	</div>
+	<script src="cp_min.js"></script>
+	<script src="a.js"></script>
+</body>
+</html>
